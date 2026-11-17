@@ -1,6 +1,7 @@
 import os
 import librosa
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def file_working(filename):
@@ -27,8 +28,17 @@ def graf(filename):
 def matrix(filename):
     """Строит матрицу"""
     y, sr = file_working(filename)
+    D = librosa.stft(y)
 
+    # 3. Берем амплитуды и переводим в децибелы
+    D_amplitude = np.abs(D)
+    D_db = librosa.amplitude_to_db(D_amplitude, ref=np.max)
 
+    plt.figure(figsize=(12, 6))
+    librosa.display.specshow(D_db, sr=sr, x_axis='time', y_axis='log', cmap='magma')
+    plt.colorbar(format='%+2.0f dB')
+    plt.title(f'Спектрограмма: {filename}')
 
-graf('NJENSI.mp3')
-# print(graf('NJENSI.mp3'))
+    plt.show()
+
+    return plt.show()
