@@ -4,9 +4,9 @@ import soundfile as sf
 import os
 
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-project_root = os.path.dirname(current_dir)
-file_path = os.path.join(project_root, 'data', "NJENSI.mp3")
+# current_dir = os.path.dirname(os.path.abspath(__file__))
+# project_root = os.path.dirname(current_dir)
+# file_path = os.path.join(project_root, 'data', "NJENSI.mp3")
 
 
 def remove_frequency(y, sr, target_freq):
@@ -35,10 +35,10 @@ def save_audio(y, sr, output_path):
 
 
 
-y, sr = librosa.load(file_path)
-
-freq = 440
-y_filtered = remove_frequency(y, sr, freq)
-save_path = os.path.join(project_root, 'data', 'song_440Hz.wav')
-
-save_audio(y_filtered, sr, save_path)
+# y, sr = librosa.load(file_path)
+#
+# freq = 440
+# y_filtered = remove_frequency(y, sr, freq)
+# save_path = os.path.join(project_root, 'data', 'song_440Hz.wav')
+#
+# save_audio(y_filtered, sr, save_path)

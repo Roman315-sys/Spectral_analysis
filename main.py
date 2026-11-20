@@ -1,4 +1,3 @@
-import os
 from src.file_working import file_working, graf, matrix
 from src.obrabotka import extract_frequency, save_audio
 from src.obrabotka_2 import save_audio, remove_frequency
@@ -14,7 +13,7 @@ def main():
         print("5. ОСТАВИТЬ ДИАПАЗОН")
         print("6. УДАЛИТЬ ДИАПАЗОН")
         print("7. Выход")
-        choice = input("Выбери действие (1-5): ")
+        choice = input("Выбери действие (1-7): ")
 
         if choice == '7':
             print("Пока!")
